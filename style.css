@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta chsrset="UTF-8">
+    <title>WallPaperZone</title>
+    <!--css-->
+    <style>
+        * {
+            font-style: italic;
+            font-weight: bold;
+            font-size: medium;
+           
+
+        }
+
+        body.light {
+            background: white;
+            color: black
+        }
+
+        body.dark {
+            background: black;
+            color: white;
+
+        }
+
+        button {
+            border: none;
+            border-radius: 12px;
+            padding: 12px 6px;
+            box-shadow: black;
+            background-color: lightseagreen;
+            color: white;
+
+        }
+
+        button:hover {
+            background-color: azure;
+            color: black;
+        }
+
+
+        .btn {
+            position: fixed;
+            top: 50px;
+            z-index: 1000;
+            left: 50%;
+            transform: translateX(-50%);
+
+
+        }
+
+        @keyframes bater {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.15);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+
+
+        .btn-bate {
+            border-radius: 50%;
+            background-color: lightseagreen;
+            color: white;
+            border: none;
+            animation: bater 1s infinite;
+            position: fixed;
+            top: 20px;
+            left: 10px;
+            line-height: 60px;
+            text-align: center;
+            width: 60px;
+            height: 60px;
+            font-size: 20px;
+            z-index: 1000;
+        }
+
+        .btn-bate:hover {
+            background-color: lightseagreen;
+            color: white
+        }
+
+        @keyframes mudarCores {
+            0% {
+                background-color: lightseagreen;
+            }
+
+            25% {
+                background-color: green;
+            }
+
+            50% {
+                background-color: yellow;
+            }
+
+            75% {
+                background-color: red;
+            }
+        }
+
+        .cores {
+            animation: mudarCores 2s infinite;
+        }
+
+
+        .img-box {
+            width: 100%;
+            height: auto;
+            display: inline-block;
+            margin: 10px;
+            display: grid;
+           grid-template-rows: max-content;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 8px;
+            height: auto;
+            box-shadow: 0 0 15px black;
+            display: flex;
+           
+        }
+
+
+        #temaBtn {
+            position: fixed;
+            top: 15px;
+            right: 10px;
+            z-index: 1000;
+        }
+
+        body {
+            text-align: center;
+        }
+
+        audio {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            z-index: 1000;
+
+        }
+
+        .fix {
+            position: fixed;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+
+        }
+        .img-btnb{
+            border: 15px solid;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <hr>
+    <div class="fix">
+        <abbr title="baixe aqui as suas imagens gratuitamente"><b>WallPaperZone</b></abbr>
+    </div>
+    <hr>
+
+    <!--botao que muda de cor-->
+    <button class="cores" id="temaBtn">alternar</button> <br>
+    <audio id="musica" autoplay loop>
+        <source src="Glass Animals - Heat Waves(M4A_128K).m4a" type="audio/mpeg">
+    </audio>
+    <button class="btn-bate"></button>
+
+
+    <!--botoes da galeria-->
+    <div class="btn">
+        <div>
+            <button onclick="filtrar('all',)">All
+            </button>
+            <button onclick="filtrar('anime')">Anime
+            </button>
+            <button onclick="filtrar('mood')">Mood
+            </button>
+            <button onclick="filtrar('film')">Film
+            </button>
+            <button onclick="filtrar('animation')">Animation
+            </button>
+        </div>
+    </div>
+    <!--barra de pesquisa-->
+
+    <!--<input type="text" id="search" placeholder="pesquisar por categoria...">-->
+
+    <!--Galeria-->
+
+    <div id="galeria">
+        <div class="img-box" data-cat="mood">
+            
+            <img src="Nighthawks.jpg">
+            <a href="Nighthawks.jpg" download>
+                <button>download</button>
+            </a>
+
+        </div>
+
+        <div class="img-box" data-cat="animation">
+            <img src="gatonoir.jpg">
+            <a href="gatonoir.jpg" download>
+                <button>download</button>
+            </a>
+        </div>
+
+
+        <div class="img-box" data-cat="film">
+            <img src="spdg.jpg">
+            <a href="spdg.jpg" download>
+                <button>download</button>
+            </a>
+        </div>
+
+
+        <div class="img-box" data-cat="anime">
+            <img src="narutosasuke.jpg">
+            <a href="narutosasuke.jpg" download>
+                <button>download</button>
+            </a>
+        </div>
+    </div>
+
+    <div class="img-box" data-cat="anime">
+        <img src="final.jpg">
+        <a href="final.jpg" download>
+            <button>download</button>
+        </a>
+    </div>
+
+    <div class="img-box" data-cat="anime">
+        <img src="itachi.jpg">
+        <a href="itachi.jpg" download>
+            <button>download</button>
+        </a>
+    </div>
+    <div>
+
+        <div class="img-box" data-cat="anime">
+            <img src="tangirou.jpg">
+            <a href="tangirou.jpg" download>
+                <button>download</button>
+            </a>
+        </div>
+
+        <div class="img-box" data-cat="animation">
+            <img src="turmamarinet.jpg">
+            <a href="turmamarinet.jpg" download>
+                <button>download</button>
+            </a>
+        </div>
+
+        <div class="img-box" data-cat="anime">
+            <img src="narjir.jpg">
+            <a href="narjir.jpg" download>
+                <button>download</button>
+            </a>
+        </div>
+
+        <div class="img-box" data-cat="anime">
+            <img src="sasukeitachi.jpg">
+            <a href="sasukeitachi.jpg" download>
+                <button>download</button>
+            </a>
+        </div>
+
+        <div class="img-box" data-cat="anime">
+            <img src="final.jpg">
+            <a href="final.jpg" download>
+                <button>download</button>
+            </a>
+        </div>
+
+        <div class="img-box" data-cat="mood">
+            <img src="Golden Palace.jpg">
+            <a href="Golden Palace.jpg" download>
+                <button>download</button>
+            </a>
+        </div>
+
+        <div class="img-box" data-cat="mood">
+            <img src="hyundai-tucson.jpg">
+            <a href="hyundai-tucson.jpg" download>
+                <button>download</button>
+            </a>
+        </div>
+        <div>
+            <div class="img-box" data-cat="anime">
+                <img src="naruto1.jpg">
+                <a href="naruto1.jpg" download>
+                    <button>download</button>
+                </a>
+            </div>
+            <div>
+
+                <div class="img-box" data-cat="anime">
+                    <img src="jiraiya1.jpg">
+                    <a href="jiraiya1.jpg" download>
+                        <button>download</button>
+                    </a>
+                </div>
+
+                <div class="img-box" data-cat="anime">
+                    <img src="zenitsu infinity castle.jpg">
+                    <a href="zenitsu infinity castle.jpg" download>
+                        <button>download</button>
+                    </a>
+                </div>
+
+                <div class="img-box" data-cat="anime">
+                    <img src="naruto e sasuke.jpg">
+                    <a href="naruto e sasuke.jpg" download>
+                        <button>download</button>
+                    </a>
+                </div>
+
+                <div class="img-box" data-cat="animation">
+                    <img src="Nox.jpg">
+                    <a href="Nox.jpg" download>
+                        <button>download</button>
+                    </a>
+                </div>
+
+                <div class="img-box" data-cat="anime">
+                    <img src="blue bird.jpg">
+                    <a href="blue bird.jpg" download>
+                        <button>download</button>
+                    </a>
+                </div>
+
+                <div class="img-box" data-cat="animation">
+                    <img src="brother krats.jpg">
+                    <a href="brother krats.jpg" download>
+                        <button>download</button>
+                    </a>
+                </div>
+
+                <div class="img-box" data-cat="anime">
+                    <img src="demon slayer.jpg">
+                    <a href="demon slayer.jpg" download>
+                        <button>download</button>
+                    </a>
+                </div>
+
+                <div class="img-box" data-cat="film">
+                    <img src="it. the thing.jpg">
+                    <a href="it. the thing.jpg" download>
+                        <button>download</button>
+                    </a>
+                </div>
+
+                <div class="img-box" data-cat="anime">
+                    <img src="itashi crows.jpg">
+                    <a href="itashi crows.jpg" download>
+                        <button>download</button>
+                    </a>
+                </div>
+
+                <div class="img-box" data-cat="anime">
+                    <img src="jujutsu kaisen1.jpg">
+                    <a href="jujutsu kaisen1.jpg" download>
+                        <button>download</button>
+                    </a>
+                </div>
+
+                <div class="img-box" data-cat="anime">
+                    <img src="naruto opening.jpg">
+                    <a href="naruto opening.jpg" download>
+                        <button>download</button>
+                    </a>
+                </div>
+
+                <div class="img-box" data-cat="anime">
+                    <img src="jujutsu kaisen2.jpg">
+                    <a href="jujutsu kaisen2.jpg" download>
+                        <button>download</button>
+                    </a>
+                </div>
+
+                <div class="img-box" data-cat="anime">
+                    <img src="naruto senin mode.jpg">
+                    <a href="naruto senin mode.jpg" download>
+                        <button>download</button>
+                    </a>
+                </div>
+
+                <div class="img-box" data-cat="film">
+                    <img src="Spider.jpg">
+                    <a href="Spider.jpg" download>
+                        <button>download</button>
+                    </a>
+                </div>
+
+                <div class="img-box" data-cat="animation">
+                    <img src="wakfu.jpg">
+                    <a href="wakfu.jpg" download>
+                        <button>download</button>
+                    </a>
+                </div>
+
+                <div class="img-box" data-cat="anime">
+                    <img src="your name.jpg">
+                    <a href="your name.jpg" download>
+                        <button>download</button>
+                    </a>
+                </div>
+
+                <div class="img-box" data-cat="anime">
+                    <img src="zenitsu2.jpg">
+                    <a href="zenitsu2.jpg" download>
+                        <button>download</button>
+                    </a>
+                </div>
+
+               
+
+                <div class="img-box" data-cat="animation">
+                    <img src="gravity falls.jpg">
+                    <a href="gravity falls.jpg" download>
+                        <button>download</button>
+                    </a>
+                </div>
+
+                <div class="img-box" data-cat="anime">
+                    <img src="kugisaki nobara.jpg">
+                    <a href="kugisaki nobara.jpg" download>
+                        <button>download</button>
+                    </a>
+                </div>
+
+                <div class="img-box" data-cat="anime">
+                    <img src="madara.jpg">
+                    <a href="madara.jpg" download>
+                        <button>download</button>
+                    </a>
+                </div>
+
+                <div class="img-box" data-cat="anime">
+                    <img src="makima.jpg">
+                    <a href="makima.jpg" download>
+                        <button>download</button>
+                    </a>
+                </div>
+
+                <div class="img-box" data-cat="anime">
+                    <img src="konohamasters.jpg">
+                    <a href="konohamasters.jpg" download>
+                        <button>download</button>
+                    </a>
+                </div>
+
+                <div class="img-box" data-cat="mood">
+                    <img src="messi.jpg">
+                    <a href="messi.jpg" download>
+                        <button>download</button>
+                    </a>
+                </div>
+
+                <div class="img-box" data-cat="anime">
+                    <img src="midorya.jpg">
+                    <a href="midorya.jpg" download>
+                        <button>download</button>
+                    </a>
+                </div>
+
+                <div class="img-box" data-cat="anime">
+                    <img src="naruto e sasuke2.jpg">
+                    <a href="naruto e sasuke2.jpg" download>
+                        <button>download</button>
+                    </a>
+                </div>
+
+                <div class="img-box" data-cat="mood">
+                    <img src="player.jpg">
+                    <a href="player.jpg" download>
+                        <button>download</button>
+                    </a>
+                </div>
+
+                <div class="img-box" data-cat="mood">
+                    <img src="CR7.jpg">
+                    <a href="CR7.jpg" download>
+                        <button>download</button>
+                    </a>
+                </div>
+
+                <div class="img-box" data-cat="mood">
+                    <img src="pink soldier.png">
+                    <a href="pink soldier.png" download>
+                        <button>download</button>
+                    </a>
+                </div>
+
+                <div class="img-box" data-cat="anime">
+                    <img src="sai.jpg">
+                    <a href="sai.jpg" download>
+                        <button>download</button>
+                    </a>
+                </div>
+
+                <div class="img-box" data-cat="mood">
+                    <img src="pôr do sol.jpg">
+                    <a href="pôr do sol.jpg" download>
+                        <button>download</button>
+                    </a>
+                </div>
+
+                <div class="img-box" data-cat="anime">
+                    <img src="sasuke the last.jpg">
+                    <a href="sasuke the last.jpg" download>
+                        <button>download</button>
+                    </a>
+                </div>
+
+                <div class="img-box" data-cat="film">
+                    <img src="spider man standing.jpg">
+                    <a href="spider man standing.jpg" download>
+                        <button>download</button>
+                    </a>
+                </div>
+
+                <div class="img-box" data-cat="mood">
+                    <img src="squid game.jpg">
+                    <a href="squid game.jpg" download>
+                        <button>download</button>
+                    </a>
+                </div>
+
+                <div class="img-box" data-cat="animation">
+                    <img src="steven universe.jpg">
+                    <a href="steven universe.jpg" download>
+                        <button>download</button>
+                    </a>
+                </div>
+
+                <div class="img-box" data-cat="anime">
+                    <img src="tanjirou falling.jpg">
+                    <a href="tanjirou falling.jpg" download>
+                        <button>download</button>
+                    </a>
+                </div>
+
+                <div class="img-box" data-cat="anime">
+                    <img src="tanjirou family.jpg">
+                    <a href="tanjirou family.jpg" download>
+                        <button>download</button>
+                    </a>
+                </div>
+
+                <div class="img-box" data-cat="anime">
+                    <img src="yourname2.jpg">
+                    <a href="yourname2.jpg" download>
+                        <button>download</button>
+                    </a>
+                </div>
+
+                <div class="img-box" data-cat="anime">
+                    <img src="tanjiroukamado.jpg">
+                    <a href="tanjiroukamado.jpg" download>
+                        <button>download</button>
+                    </a>
+                </div>
+
+                <div class="img-box" data-cat="anime">
+                    <img src="zenitsu jumped.jpg">
+                    <a href="zenitsu jumped.jpg" download>
+                        <button>download</button>
+                    </a>
+                </div>
+
+                <div class="img-box" data-cat="anime">
+                    <img src="zoro.jpg">
+                    <a href="zoro.jpg" download>
+                        <button>download</button>
+                    </a>
+                </div>
+
+                <div class="img-box" data-cat="mood">
+                    <img src="barça wall.jpg">
+                    <a href="barça wall.jpg" download>
+                        <button>download</button>
+                    </a>
+                </div>
+
+                <div class="img-box" data-cat="mood">
+                    <img src="basket ball.jpg">
+                    <a href="basket ball.jpg" download>
+                        <button>download</button>
+                    </a>
+                </div>
+
+                <div class="img-box" data-cat="mood">
+                    <img src="barça logo.jpg">
+                    <a href="barça logo.jpg" download>
+                        <button>download</button>
+                    </a>
+                </div>
+
+                <div class="img-box" data-cat="mood">
+                    <img src="barça.jpg">
+                    <a href="barça.jpg" download>
+                        <button>download</button>
+                    </a>
+                </div>
+
+                <div class="img-box" data-cat="mood">
+                    <img src="brinde.jpg">
+                    <a href="brinde.jpg" download>
+                        <button>download</button>
+                    </a>
+                </div>
+
+                <div class="img-box" data-cat="mood">
+                    <img src="cat being.jpg">
+                    <a href="cat being.jpg" download>
+                        <button>download</button>
+                    </a>
+                </div>
+            
+
+
+
+
+
+
+
+
+
+                <script>
+                    //const search=document.getElementById("search");
+                    const imagens = document.querySelectorAll(".img-box");
+
+                    function filtrar(categoria) {
+                        if (categoria === "all") {
+                            // search.style.display = "inline-block";
+                            imagens.forEach(img => img.style.display = "inline-block");
+                        } else {
+                            // search.style.display="none";
+                            imagens.forEach(img => {
+                                const cat = img.getAttribute("data-cat").toLowerCase();
+                                img.style.display = (cat === categoria) ? "inline-block" : "none";
+                            });
+                        }
+
+                    }
+
+
+                    const temaBtn = document.getElementById("temaBtn");
+                    //verificar se ja tem tema salvo
+
+                    let modoClaro = localStorage.getItem("modoClaro") === "true";
+                    document.body.className = modoClaro ? "light" : "dark";
+
+                    //atualiza o botao quando clicado
+
+                    temaBtn.addEventListener("click", () => {
+                        modoClaro = !modoClaro;
+                        document.body.className = modoClaro ? "light" : "dark";
+
+                        localStore.setItem("modoClaro", modoClaro);
+                    }); // salva
+
+                </script>
+
+                <script>
+                    //faz o audio tocar assim que o usuario toca em qualquer lugar da tela
+                    window.addEventListener("click", () => {
+                        const audio = document.getElementById("musica");
+                        audio.play();
+                    }, { once: true });
+
+
+                </script>
+
+</body>
+
+</html>
